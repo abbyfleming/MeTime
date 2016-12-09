@@ -3,8 +3,31 @@
 <head>
 	<title>MeTime</title>
 	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<script type="text/javascript" src="lib/bower_components/angular/angular.min.js"></script>
+    <script type="text/javascript" src="lib/bower_components/firebase/firebase.js"></script>
+    <script type="text/javascript" src="lib/bower_components/angular-route/angular-route.min.js"></script>
 </head>
-<body>
+
+<!--define the app -->
+<body ng-app="x">
+
+
+<!--define the view -->
+<div ng-view></div>
+
+
+
+
+
+
+
+<!-- jquery and bootstrap -->
+<script type="text/javascript" src="lib/bower_components/jquery/dist/jquery.min.js"></script>
+
+<!-- app & factories -->
+<script type="text/javascript" src="app/app.js"></script> <!--runs first -->
+
+<!-- controllers -->
 
 </body>
 </html>
