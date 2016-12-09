@@ -1,0 +1,24 @@
+{
+  "name": "angular-to-do",
+  "description": "",
+  "main": "",
+  "authors": [
+    "Abby Moore <abbyleighanne@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/abbyfleming/MeTime",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.6.0",
+    "angular-route": "^1.6.0",
+    "angularfire": "^2.1.0",
+    "firebase": "^3.6.3",
+    "jquery": "^3.1.1"
+  }
+}
