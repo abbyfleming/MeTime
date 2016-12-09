@@ -1,0 +1,104 @@
+{
+  "items": [
+    {
+    "title": "Read A Book",
+    "description": "Grab your favorite book and a blanket and simply unwind.",
+    "image": "../images/001-book.jpg"
+    },
+    {
+    "title": "Binge Watch Netflix",
+    "description": "It's only a binge if you watch more than six episodes at a time.",
+    "image": "../images/002-tv.jpg"
+    },
+    {
+    "title": "Take A Nap",
+    "description": "A short 20-30 minute nap can make you feel refreshed and more alert.",
+    "image": "../images/003-cozy.jpg"
+    },
+    {
+    "title": "Write Yourself a Love Note",
+    "description": "Be your own biggest fan.",
+    "image": "../images/004-letter.jpg"
+    },
+    {
+    "title": "Light A Candle",
+    "description": "But don't let burn for too long. Try a cozy scent like vanilla.",
+    "image": "../images/005-candle.jpg"
+    },
+    {
+    "title": "Color",
+    "description": "Be intricate. Or not. Color inside the lines. Or not.",
+    "image": "../images/006-color.jpg"
+    },
+    {
+    "title": "Watch A TED Talk",
+    "description": "Be inspired by others.",
+    "image": "../images/007-talk.jpg"
+    },
+    {
+    "title": "Call A Friend",
+    "description": "Texting doesn't count.",
+    "image": "../images/008-call.jpg"
+    },
+    {
+    "title": "Play A Board Game",
+    "description": "But not monopoly. That game destroys families.",
+    "image": "../images/009-game.jpg"
+    },
+    {
+    "title": "Plan A Staycation",
+    "description": "Be a tourist in your own town. Try a new restaruant or walk around a park.",
+    "image": "../images/010-staycation.jpg"
+    },
+    {
+    "title": "Eat A Healthy Meal",
+    "description": "Pizza doesn't count.",
+    "image": "../images/011-healthy.jpg"
+    },
+    {
+    "title": "Unplug From Technology",
+    "description": "Resist the urge to keep checking Facebook or email.",
+    "image": "../images/012-unplug.jpg"
+    },
+    {
+    "title": "Have A Cup of Tea",
+    "description": "Or Coffee. Whichever you like more.",
+    "image": "../images/013-tea.jpg"
+    },
+    {
+    "title": "Go On A Hike",
+    "description": "A short mile hike still counts. Be sure to take water.",
+    "image": "../images/014-staycation.jpg"
+    },
+    {
+    "title": "Write What You're Thankful For",
+    "description": "Reflect on the good things in your life.",
+    "image": "../images/015-journal.jpg"
+    },
+    {
+    "title": "Buy A Bouquet Of Flowers",
+    "description": "The fancy flowers. None of those cheap daisies.",
+    "image": "../images/016-flowers.jpg"
+    },
+    {
+    "title": "Stretch",
+    "description": "You're probably slouching.",
+    "image": "../images/017-stretch.jpg"
+    },
+    {
+    "title": "Soak Up The Sun",
+    "description": "Take a walk in the sunshine.",
+    "image": "../images/018-sun.jpg"
+    },
+    {
+    "title": "Take A Hot Shower",
+    "description": "Use fancy body wash.",
+    "image": "../images/019-bath.jpg"
+    },
+    {
+    "title": "Go For A Joy Ride",
+    "description": "Drive to simply drive. Get lost.",
+    "image": "../images/020-car.jpg"
+    }
+  ]
+}
