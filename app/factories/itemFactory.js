@@ -14,7 +14,6 @@ app.factory("ItemStorage", ($http, FBCreds) => {
 				let itemCollection = itemObject.data; 
 				Object.keys(itemCollection).forEach((key) =>{
 					items.push(itemCollection[key]);
-					console.log("items array", items);
 				});
 			
 				resolve(items);
