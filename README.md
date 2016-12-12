@@ -1,1 +1,1 @@
-# MeTime
+“Me Time” - a single page application that allows users to save cards that remind them to take care of themselves. A set of cards would be pre-populated and would have ideas such as: watch your favorite movie, have coffee with a friend, go on a walk, listen to your favorite song, get some extra sleep, etc. The user would also be able to save favorites and delete favorites.

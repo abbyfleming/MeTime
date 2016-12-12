@@ -2,6 +2,7 @@
 <html>
 <head>
 	<title>MeTime</title>
+	<base href="/">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 	<script type="text/javascript" src="lib/bower_components/angular/angular.min.js"></script>
     <script type="text/javascript" src="lib/bower_components/firebase/firebase.js"></script>
@@ -9,15 +10,16 @@
 </head>
 
 <!--define the app -->
-<body ng-app="x">
+<body ng-app="MeTimeApp">
 
+	<!-- include the navigation partial -->
+	<div ng-include="'partials/nav.html'"></div>
 
-<!--define the view -->
-<div ng-view></div>
+	<!--define the view -->
+	<div ng-view></div>
 
-
-
-
+	<!-- include the navigation partial -->
+	<div ng-include="'partials/footer.html'"></div>
 
 
 
@@ -26,8 +28,11 @@
 
 <!-- app & factories -->
 <script type="text/javascript" src="app/app.js"></script> <!--runs first -->
+<script type="text/javascript" src="app/values/fb-creds.js"></script>
+<script type="text/javascript" src="app/factories/itemFactory.js"></script>
 
 <!-- controllers -->
+<script type="text/javascript" src="app/controllers/itemListCtrl.js"></script>
 
 </body>
 </html>
