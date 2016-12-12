@@ -24,6 +24,81 @@
       "title": "Light A Candle",
       "description": "But don't let burn for too long. Try a cozy scent like vanilla.",
       "image": "images/005-candle.jpg"
+    },
+    "color": {
+      "title": "Color",
+      "description": "Be intricate. Or not. Color inside the lines. Or not.",
+      "image": "images/006-color.jpg"
+    },
+   "ted": {
+      "title": "Watch A TED Talk",
+      "description": "Be inspired by others.",
+      "image": "images/007-talk.jpg"
+    },
+    "friend": {
+      "title": "Call A Friend",
+      "description": "Texting doesn't count.",
+      "image": "images/008-call.jpg"
+    },
+    "boardGame": {
+     "title": "Play A Board Game",
+      "description": "But not monopoly. That game destroys families.",
+      "image": "images/009-game.jpg"
+    },
+    "staycation": {
+     "title": "Plan A Staycation",
+     "description": "Be a tourist in your own town. Try a new restaruant or walk around a park.",
+      "image": "images/010-staycation.jpg"
+    },
+    "healthy": {
+      "title": "Eat A Healthy Meal",
+      "description": "Pizza doesn't count.",
+      "image": "../images/011-healthy.jpg"
+    },
+    "unplug": {
+      "title": "Unplug From Technology",
+      "description": "Resist the urge to keep checking Facebook or email.",
+      "image": "images/012-unplug.jpg"
+    },
+    "tea": {
+      "title": "Have A Cup of Tea",
+      "description": "Or Coffee. Whichever you like more.",
+      "image": "images/013-tea.jpg"
+    },
+    "hike": {
+     "title": "Go On A Hike",
+      "description": "A short mile hike still counts. Be sure to take water.",
+      "image": "images/014-hike.jpg"
+    },
+    "gratitude": {
+      "title": "Write What You're Thankful For",
+      "description": "Reflect on the good things in your life.",
+      "image": "images/015-journal.jpg"
+    },
+    "flowers": {
+      "title": "Buy A Bouquet Of Flowers",
+      "description": "The fancy flowers. None of those cheap daisies.",
+      "image": "images/016-flowers.jpg"
+    },
+    "stretch": {
+      "title": "Stretch",
+      "description": "You're probably slouching.",
+      "image": "images/017-stretch.jpg"
+    },
+    "sun": {
+      "title": "Soak Up The Sun",
+      "description": "Take a walk in the sunshine.",
+      "image": "images/018-sun.jpg"
+    },
+    "shower": {
+      "title": "Take A Hot Shower",
+      "description": "Use fancy body wash.",
+      "image": "images/019-bath.jpg"
+    },
+    "ride": {
+      "title": "Go For A Joy Ride",
+      "description": "Drive to simply drive. Get lost.",
+    "image": "images/020-car.jpg"
     }
   }
 }
