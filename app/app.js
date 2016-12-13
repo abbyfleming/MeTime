@@ -2,8 +2,7 @@
 console.log("app.js");
 // Resolve: safety feature so people can't just go to the URL. 
 //resolve: {isAuth}
-//
-//
+
 
 /* Define the app */
 var app = angular.module("MeTimeApp", ["ngRoute"]);
@@ -34,7 +33,7 @@ app.config(function($routeProvider, $locationProvider){
 			controller: 'ItemListCtrl',
 		})
 		
-		.otherwise('/login'); 
+		.otherwise('/select'); 
 
 	$locationProvider.html5Mode(true);
 	
