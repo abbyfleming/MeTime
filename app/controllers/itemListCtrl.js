@@ -1,5 +1,7 @@
 "use strict";
 
+console.log("file linked --> itemListCtrl.js");
+
 
 app.controller('ItemListCtrl', function($scope, ItemStorage){
 
