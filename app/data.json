@@ -3,102 +3,123 @@
     "readBook": {
       "title": "Read A Book",
       "description": "Grab your favorite book and a blanket and simply unwind.",
-      "image": "images/001-book.jpg"
+      "image": "images/001-book.jpg",
+      "cardid" : "readBook"
     },
     "netflix": {
       "title": "Binge Watch Netflix",
       "description": "It's only a binge if you watch more than six episodes at a time.",
-      "image": "images/002-tv.jpg"
+      "image": "images/002-tv.jpg",
+      "cardid" : "netflix"
     },
     "nap": {
       "title": "Take A Nap",
       "description": "A short 20-30 minute nap can make you feel refreshed and more alert.",
-      "image": "images/003-cozy.jpg"
+      "image": "images/003-cozy.jpg",
+      "cardid" : "nap"
     },
     "loveNote": {
       "title": "Write Yourself a Love Note",
       "description": "Be your own biggest fan.",
-      "image": "images/004-letter.jpg"
+      "image": "images/004-letter.jpg",
+      "cardid" : "loveNote"
     },
     "candle": {
       "title": "Light A Candle",
       "description": "But don't let burn for too long. Try a cozy scent like vanilla.",
-      "image": "images/005-candle.jpg"
+      "image": "images/005-candle.jpg",
+      "cardid" : "candle"
     },
     "color": {
       "title": "Color",
       "description": "Be intricate. Or not. Color inside the lines. Or not.",
-      "image": "images/006-color.jpg"
+      "image": "images/006-color.jpg",
+      "cardid" : "color"
     },
    "ted": {
       "title": "Watch A TED Talk",
       "description": "Be inspired by others.",
-      "image": "images/007-talk.jpg"
+      "image": "images/007-talk.jpg",
+      "cardid" : "ted"
     },
     "friend": {
       "title": "Call A Friend",
       "description": "Texting doesn't count.",
-      "image": "images/008-call.jpg"
+      "image": "images/008-call.jpg",
+      "cardid" : "friend"
+
     },
     "boardGame": {
      "title": "Play A Board Game",
       "description": "But not monopoly. That game destroys families.",
-      "image": "images/009-game.jpg"
+      "image": "images/009-game.jpg",
+      "cardid" : "boardGame"
     },
     "staycation": {
      "title": "Plan A Staycation",
      "description": "Be a tourist in your own town. Try a new restaruant or walk around a park.",
-      "image": "images/010-staycation.jpg"
+      "image": "images/010-staycation.jpg",
+      "cardid" : "staycation"
     },
     "healthy": {
       "title": "Eat A Healthy Meal",
       "description": "Pizza doesn't count.",
-      "image": "../images/011-healthy.jpg"
+      "image": "../images/011-healthy.jpg",
+      "cardid" : "healthy"
     },
     "unplug": {
       "title": "Unplug From Technology",
       "description": "Resist the urge to keep checking Facebook or email.",
-      "image": "images/012-unplug.jpg"
+      "image": "images/012-unplug.jpg",
+      "cardid" : "unplug"
     },
     "tea": {
       "title": "Have A Cup of Tea",
       "description": "Or Coffee. Whichever you like more.",
-      "image": "images/013-tea.jpg"
+      "image": "images/013-tea.jpg",
+      "cardid" : "tea"
     },
     "hike": {
      "title": "Go On A Hike",
       "description": "A short mile hike still counts. Be sure to take water.",
-      "image": "images/014-hike.jpg"
+      "image": "images/014-hike.jpg",
+      "cardid" : "hike"
     },
     "gratitude": {
       "title": "Write What You're Thankful For",
       "description": "Reflect on the good things in your life.",
-      "image": "images/015-journal.jpg"
+      "image": "images/015-journal.jpg",
+      "cardid" : "gratitude"
     },
     "flowers": {
       "title": "Buy A Bouquet Of Flowers",
       "description": "The fancy flowers. None of those cheap daisies.",
-      "image": "images/016-flowers.jpg"
+      "image": "images/016-flowers.jpg",
+      "cardid" : "flowers"
     },
     "stretch": {
       "title": "Stretch",
       "description": "You're probably slouching.",
-      "image": "images/017-stretch.jpg"
+      "image": "images/017-stretch.jpg",
+      "cardid" : "stretch"
     },
     "sun": {
       "title": "Soak Up The Sun",
       "description": "Take a walk in the sunshine.",
-      "image": "images/018-sun.jpg"
+      "image": "images/018-sun.jpg",
+      "cardid" : "sun"
     },
     "shower": {
       "title": "Take A Hot Shower",
       "description": "Use fancy body wash.",
-      "image": "images/019-bath.jpg"
+      "image": "images/019-bath.jpg",
+      "cardid" : "shower"
     },
     "ride": {
       "title": "Go For A Joy Ride",
       "description": "Drive to simply drive. Get lost.",
-    "image": "images/020-car.jpg"
+      "image": "images/020-car.jpg",
+      "cardid" : "ride"
     }
   }
 }
