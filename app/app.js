@@ -25,15 +25,16 @@ app.config(function($routeProvider, $locationProvider){
 		.when('/login', {
 		templateUrl: 'partials/login.html',
 		controller: "LoginCtrl"
-		})
 
+		})
 
 		.when('/select', {
 			templateUrl: 'partials/list-items.html',
 			controller: 'ItemListCtrl',
+			resolve: {isAuth}
 		})
 		
-		.otherwise('/select'); 
+		.otherwise('/login'); 
 
 	$locationProvider.html5Mode(true);
 	

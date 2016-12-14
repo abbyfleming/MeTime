@@ -1,8 +1,8 @@
 "use strict";
 
-app.factory("ItemFactory", ($http, FBCreds) => {
+app.factory("ItemFactory", ($http, FBCreds, AuthFactory) => {
 
-	console.log("URL", FBCreds.URL);
+	//console.log("URL", FBCreds.URL);
 
 	//get the json file from firebase
 	let getItemList = () => {
@@ -29,12 +29,41 @@ app.factory("ItemFactory", ($http, FBCreds) => {
 
 
 	//post to favorites in firebase
-	let postFavorites = (newTask) => {
+	let postFavorite = (newFavorite) => {
+
+		console.log("newFavorite",newFavorite); 
+
+		// return new Promise((resolve, reject) => {
+		// 	$http.post(`${FBCreds.URL}/fav.json`, angular.toJson(newTask))
+		// 	.success((obj) => {
+		// 		resolve(obj);
+		// 		console.log("posted new item");
+		// 	})
+		// 	.error((error) => {
+		// 		reject(error);
+		// 	});
+		// });
+	};
+
+
+	let getFavorite = () => {
+
+		let currentUser = AuthFactory.getUser();
+		let items = [];
+
+		console.log(currentUser);
+
 		return new Promise((resolve, reject) => {
-			$http.post(`${FBCreds.URL}/fav.json`, angular.toJson(newTask))
-			.success((obj) => {
-				resolve(obj);
-				console.log("posted new item");
+			console.log(currentUser);
+
+			$http.get(`${FBCreds.URL}/fav.json?orderBy="uid"&equalTo="${currentUser}"`)
+			.success((itemObject) => {
+				let itemCollection = itemObject;
+				Object.keys(itemCollection).forEach((key) =>{
+					itemCollection[key].id = key;
+					items.push(itemCollection[key]);
+				});
+				resolve(items);
 			})
 			.error((error) => {
 				reject(error);
@@ -42,6 +71,9 @@ app.factory("ItemFactory", ($http, FBCreds) => {
 		});
 	};
 
-	return {getItemList, postFavorites};
+
+
+
+	return {getItemList, postFavorite, getFavorite};
 
 }); 
