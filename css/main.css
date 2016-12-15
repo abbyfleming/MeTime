@@ -1,6 +1,11 @@
 
-body{
+body {
 	background: #FAFAFA;
+}
+
+#wrapper {
+	width: 80%;
+	margin: 0 auto;
 }
 
 .caption {
@@ -12,6 +17,7 @@ body{
 .clearfloat {
 	clear: both;
 }
+
 
 
 /*# sourceMappingURL=main.css.map */
