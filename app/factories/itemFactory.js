@@ -31,7 +31,7 @@ app.factory("ItemFactory", ($http, FBCreds, AuthFactory) => {
 	//post to favorites in firebase
 	let postFavorite = (newFavorite) => {
 
-		console.log("newFavorite",newFavorite); 
+		console.log("newFavorite", newFavorite); 
 
 		// return new Promise((resolve, reject) => {
 		// 	$http.post(`${FBCreds.URL}/fav.json`, angular.toJson(newTask))
