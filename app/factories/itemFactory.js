@@ -47,25 +47,25 @@ app.factory("ItemFactory", ($http, FBCreds, AuthFactory) => {
 
 
 	let getFavorite = () => {
-
 		let currentUser = AuthFactory.getUser();
 		let items = [];
 
-		console.log(currentUser);
+		console.log("get favorite", currentUser);
 
 		return new Promise((resolve, reject) => {
 			console.log(currentUser);
 
-			$http.get(`${FBCreds.URL}/fav.json?orderBy="uid"&equalTo="${currentUser}"`)
-			.success((itemObject) => {
-				let itemCollection = itemObject;
+			$http.get(`${FBCreds.URL}/favorite.json?orderBy="uid"&equalTo="${currentUser}"`)
+			.then((itemObject) => {
+				console.log("itemObject", itemObject.data);
+				let itemCollection = itemObject.data;
 				Object.keys(itemCollection).forEach((key) =>{
 					itemCollection[key].id = key;
 					items.push(itemCollection[key]);
 				});
 				resolve(items);
 			})
-			.error((error) => {
+			.catch((error) => {
 				reject(error);
 			});
 		});

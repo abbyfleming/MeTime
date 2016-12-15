@@ -33,7 +33,12 @@ app.config(function($routeProvider, $locationProvider){
 			controller: 'ItemListCtrl',
 			resolve: {isAuth}
 		})
-		
+
+		.when('/favorite', {
+			templateUrl: 'partials/list-fav.html',
+			controller: 'ItemFavCtrl'
+		})
+
 		.otherwise('/login'); 
 
 	$locationProvider.html5Mode(true);
