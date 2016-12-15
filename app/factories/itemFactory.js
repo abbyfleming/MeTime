@@ -30,20 +30,20 @@ app.factory("ItemFactory", ($http, FBCreds, AuthFactory) => {
 
 	//post to favorites in firebase
 	let postFavorite = (newFavorite) => {
-
 		console.log("newFavorite", newFavorite); 
 
-		// return new Promise((resolve, reject) => {
-		// 	$http.post(`${FBCreds.URL}/fav.json`, angular.toJson(newTask))
-		// 	.success((obj) => {
-		// 		resolve(obj);
-		// 		console.log("posted new item");
-		// 	})
-		// 	.error((error) => {
-		// 		reject(error);
-		// 	});
-		// });
+		return new Promise((resolve, reject) => {
+			$http.post(`${FBCreds.URL}/favorite.json`, angular.toJson(newFavorite))
+			.then((favorite) => {
+				resolve(favorite);
+				console.log("posted new item", favorite);
+			})
+			.catch((error) => {
+				reject(error);
+			});
+		});
 	};
+
 
 
 	let getFavorite = () => {
