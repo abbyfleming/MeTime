@@ -2,5 +2,15 @@
 
 
 <div ng-repeat="item in items">
-	<div>{{item.cardid}}</div>
-</div>
+
+<!-- <div class="row"> -->
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+     <img ng-src="{{item.image}}">
+      <div class="caption">
+        <h3>{{item.title}}</h3>
+        <p>{{item.description}}</p>
+        <a href="" role="button" ng-click="addFavorite(item.id)">Save Favorite</a>
+      </div>
+    </div>
+  </div>

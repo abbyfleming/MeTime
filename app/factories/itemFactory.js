@@ -73,7 +73,13 @@ app.factory("ItemFactory", ($http, FBCreds, AuthFactory) => {
 
 
 
+	let singleFavorite = () => {
+		let currentUser = AuthFactory.getUser();
 
-	return {getItemList, postFavorite, getFavorite};
+
+	};
+
+
+	return {getItemList, postFavorite, getFavorite, singleFavorite};
 
 }); 
