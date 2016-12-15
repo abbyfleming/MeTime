@@ -5,10 +5,10 @@ app.controller('NavCtrl', function($scope){
    $scope.navItems = [
       {
          name: "Login/Register",
-         url: '#/login'
+         url: '/login'
       },
       {
          name: "Logout",
-         url: '#/logout'
+         url: '/logout'
       }]; 
 });
