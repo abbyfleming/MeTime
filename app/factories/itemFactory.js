@@ -64,7 +64,7 @@ app.factory("ItemFactory", ($http, FBCreds, AuthFactory) => {
 					items.push(itemCollection[key]);
 				});
 				resolve(items);
-			})
+				})
 			.catch((error) => {
 				reject(error);
 			});
@@ -73,12 +73,22 @@ app.factory("ItemFactory", ($http, FBCreds, AuthFactory) => {
 
 
 
-	let singleFavorite = () => {
-		let currentUser = AuthFactory.getUser();
+	let singleFavorite = (itemId) => {
 
+		return new Promise((resolve, reject) => {
+			$http.get(`${FBCreds.URL}/items/${itemId}.json`)
 
+			.then((itemObject) => {
+				console.log(itemObject);
+				resolve(itemObject.data);
+
+			})
+			.catch((error) => {
+				reject(error);
+			});
+		});
 	};
-
+	
 
 	return {getItemList, postFavorite, getFavorite, singleFavorite};
 
