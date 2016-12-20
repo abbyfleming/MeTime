@@ -95,18 +95,17 @@ app.factory("ItemFactory", ($http, FBCreds, AuthFactory) => {
 	//$http.delete(`${FBCreds.databaseURL}/boards/${boardId}.json`)
 	let deleteFavorite = (favoriteId) => {
 
-		console.log(favoriteId);
-
-		// return new Promise((resolve, reject) => {
-		// 	console.log(favoriteId)
-		// 	//http.delete(`${FBCreds.URL}/favorite/${favoriteId}.json`)
-		// 	.then((obj)=>{
-		// 		resolve(obj);
-		// 	})
-		// 	.catch((error) => {
-		// 		reject(error);
-		// 	});
-		// });
+		return new Promise((resolve, reject) => {
+			console.log(favoriteId)
+			$http.delete(`${FBCreds.URL}/favorite/${favoriteId}.json`)
+			.then((obj)=>{
+				console.log("you deleted an item");
+				resolve(obj);
+			})
+			.catch((error) => {
+				reject(error);
+			});
+		});
 	};
 
 
