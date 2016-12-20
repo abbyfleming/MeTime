@@ -2,9 +2,9 @@
 
 app.controller('ItemDeleteCtrl', function($scope, ItemFactory){
 
-	$scope.deleteFavorite = (itemId) => {
+	$scope.deleteFavorite = (cardid) => {
 
-		console.log("itemId", itemId); 
+		console.log("itemId", cardid); 
 
 	}
 
