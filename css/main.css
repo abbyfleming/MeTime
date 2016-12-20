@@ -17,4 +17,17 @@ body {
 	clear: both;
 }
 
+#logo {
+	margin: 0 auto;
+}
+
+#logo img{
+	width: 50%;
+	text-align: center;
+}
+
+#footer {
+	height: 200px;
+}
+
 /*# sourceMappingURL=main.css.map */
