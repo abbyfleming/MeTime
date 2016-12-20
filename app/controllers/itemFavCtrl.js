@@ -2,31 +2,40 @@
 
 app.controller('ItemFavCtrl', function($scope, ItemFactory){
 
+
+/**
+  * getFavorite returns the data from the ItemFactory
+  * then for each item, creates a new object with
+  * the cardid (ex: 3) & id (from firebase) 
+  * then sends along to sort
+*/
+
 	ItemFactory.getFavorite()
 		.then( (favoriteArray) => {
-			//the id does come through with this array
 
-		console.log(favoriteArray);
-		
 		let favoriteId = [];
 
 		for (var i = 0; i < favoriteArray.length; i++){
-
 			let uniqueCard = {
 				id: favoriteArray[i].id,
 				cardid: parseInt(favoriteArray[i].cardid)
 			}
 
-			//let findId = parseInt(favoriteArray[i].cardid);
 			favoriteId.push(uniqueCard);
 		}
 
-		console.log("id and cardid", favoriteId);
-		$scope.sortFavorites(favoriteId);
+		$scope.sortFavorite(favoriteId);
 	}); 
 
 
-	$scope.sortFavorites = (uniqueCard) => {
+/**
+  * sortFavorite takes the array from getFavorite
+  * and makes a call to singleFavorite in ItemFactory
+  * when the data returns, the unique id is then added 
+  * back in. This allows a user to delete only their favorite
+*/
+
+	$scope.sortFavorite = (uniqueCard) => {
 		let favoriteArray = [];
 
 		for (var i = 0; i < uniqueCard.length; i++){
@@ -36,13 +45,13 @@ app.controller('ItemFavCtrl', function($scope, ItemFactory){
 			
 			ItemFactory.singleFavorite(id)
 			.then((favoriteData) => {
-				console.log(favoriteData);
 
-				let x = favoriteData;
-				x.cardid = fbId;
+				let data = favoriteData;
+				data.cardid = fbId;
 
 				favoriteArray.push(favoriteData);
-	
+		
+				//items gets displayed in the dom
 				$scope.items = favoriteArray;
 				$scope.$apply();
 			});
