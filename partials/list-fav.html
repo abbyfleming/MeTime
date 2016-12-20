@@ -1,15 +1,17 @@
 <h1> Favorites! </h1>
 
-
 <div ng-repeat="item in items">
 
 <!-- <div class="row"> -->
-  <div class="col-sm-6 col-md-4">
+    <div class="col-sm-6 col-md-4">
     <div class="thumbnail">
      <img ng-src="{{item.image}}">
       <div class="caption">
         <h3>{{item.title}}</h3>
         <p>{{item.description}}</p>
+          <a href="" role="button" ng-controller="ItemDeleteCtrl" ng-click="deleteFavorite(item.id)">Delete Favorite</a>
       </div>
     </div>
+  </div>
+
   </div>

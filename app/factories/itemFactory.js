@@ -57,12 +57,13 @@ app.factory("ItemFactory", ($http, FBCreds, AuthFactory) => {
 
 			$http.get(`${FBCreds.URL}/favorite.json?orderBy="uid"&equalTo="${currentUser}"`)
 			.then((itemObject) => {
-				console.log("itemObject", itemObject.data);
+				//console.log("itemObject", itemObject.data);
 				let itemCollection = itemObject.data;
 				Object.keys(itemCollection).forEach((key) =>{
 					itemCollection[key].id = key;
 					items.push(itemCollection[key]);
 				});
+				console.log(items);
 				resolve(items);
 				})
 			.catch((error) => {
@@ -79,7 +80,7 @@ app.factory("ItemFactory", ($http, FBCreds, AuthFactory) => {
 			$http.get(`${FBCreds.URL}/items/${itemId}.json`)
 
 			.then((itemObject) => {
-				console.log(itemObject);
+				console.log("singleFavorite", itemObject.data);
 				resolve(itemObject.data);
 
 			})
@@ -90,6 +91,28 @@ app.factory("ItemFactory", ($http, FBCreds, AuthFactory) => {
 	};
 	
 
-	return {getItemList, postFavorite, getFavorite, singleFavorite};
+
+//$http.delete(`${FBCreds.databaseURL}/boards/${boardId}.json`)
+	let deleteFavorite = (favoriteId) => {
+
+		console.log(favoriteId);
+
+		// return new Promise((resolve, reject) => {
+		// 	console.log(favoriteId)
+		// 	//http.delete(`${FBCreds.URL}/favorite/${favoriteId}.json`)
+		// 	.then((obj)=>{
+		// 		resolve(obj);
+		// 	})
+		// 	.catch((error) => {
+		// 		reject(error);
+		// 	});
+		// });
+	};
+
+
+	
+
+
+	return {getItemList, postFavorite, getFavorite, singleFavorite, deleteFavorite};
 
 }); 
