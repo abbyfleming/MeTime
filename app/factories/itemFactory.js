@@ -94,9 +94,9 @@ app.factory("ItemFactory", ($http, FBCreds, AuthFactory) => {
 	//example: ${FBCreds.databaseURL}/favorite/-KZ7E0pNkb-EbMWmFRnX
 	//$http.delete(`${FBCreds.databaseURL}/boards/${boardId}.json`)
 	let deleteFavorite = (favoriteId) => {
-
+		console.log("clicked on delete");
 		return new Promise((resolve, reject) => {
-			console.log(favoriteId)
+			console.log(favoriteId);
 			$http.delete(`${FBCreds.URL}/favorite/${favoriteId}.json`)
 			.then((obj)=>{
 				console.log("you deleted an item");

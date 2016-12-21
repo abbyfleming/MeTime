@@ -12,6 +12,12 @@ app.controller('ItemFavCtrl', function($scope, ItemFactory){
 
 	ItemFactory.getFavorite()
 		.then( (favoriteArray) => {
+			$scope.buildFavorite(favoriteArray);
+	}); 
+
+
+
+	$scope.buildFavorite = (favoriteArray) => {
 
 		let favoriteId = [];
 
@@ -19,13 +25,14 @@ app.controller('ItemFavCtrl', function($scope, ItemFactory){
 			let uniqueCard = {
 				id: favoriteArray[i].id,
 				cardid: parseInt(favoriteArray[i].cardid)
-			}
+			};
 
 			favoriteId.push(uniqueCard);
 		}
 
 		$scope.sortFavorite(favoriteId);
-	}); 
+	};
+
 
 
 /**
@@ -36,6 +43,7 @@ app.controller('ItemFavCtrl', function($scope, ItemFactory){
 */
 
 	$scope.sortFavorite = (uniqueCard) => {
+		console.log("is sort fav running too?");
 		let favoriteArray = [];
 
 		for (var i = 0; i < uniqueCard.length; i++){
@@ -58,5 +66,26 @@ app.controller('ItemFavCtrl', function($scope, ItemFactory){
 		}
 	};
 
+
+/**
+  * deleteFavorite takes the cardid from the user's selection
+  * and makes a call to deleteFavorite in the factory
+  * then runs a call to build up a new favorite array
+  * and sorts the array to update the scope.
+*/
+
+
+	$scope.deleteFavorite = (cardid) => {
+		ItemFactory.deleteFavorite(cardid)
+			
+			.then ((cardid) => {	
+				ItemFactory.getFavorite()
+					
+			.then((favoriteArray) => {	
+				$scope.buildFavorite(favoriteArray);
+				});
+			
+			});
+	};
 
 });
