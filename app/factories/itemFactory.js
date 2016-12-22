@@ -1,6 +1,6 @@
 "use strict";
 
-app.factory("ItemFactory", ($http, FBCreds, AuthFactory) => {
+app.factory("ItemFactory", ($http, $window, FBCreds, AuthFactory) => {
 
 	//console.log("URL", FBCreds.URL);
 
@@ -36,6 +36,7 @@ app.factory("ItemFactory", ($http, FBCreds, AuthFactory) => {
 			$http.post(`${FBCreds.URL}/favorite.json`, angular.toJson(newFavorite))
 			.then((favorite) => {
 				resolve(favorite);
+				$window.alert("You saved an item!");
 				console.log("posted new item", favorite);
 			})
 			.catch((error) => {

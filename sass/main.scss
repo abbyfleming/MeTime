@@ -1,0 +1,93 @@
+
+$card-bgcolor: #CFD5D1;
+$text-color: #5F5F5F;
+$bg-color: #FAFAFA;
+$link-color: #9EA6B3;
+$icon-color: #D8A260;
+$font-stack: 'Muli', sans-serif;
+
+/* ----- HEADER & DEFAULTS----- */
+
+body {
+  color: $text-color;
+  background: $bg-color;
+  font-family: $font-stack;
+}
+
+a, a:hover {
+	text-decoration: none;
+}
+
+#wrapper {
+	padding: 15px;
+	margin: 30px auto;
+	width: 75%;
+}
+
+#logo {
+	margin: 0 auto;
+}
+
+#logo img{
+	width: 50%;
+	text-align: center;
+}
+
+
+/* ----- CARDS ----- */
+
+h3 {
+	font-size: 1.2em;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
+
+.caption {
+	min-height: 150px;
+	background: $card-bgcolor;
+	height: auto;
+	text-align: center;
+}
+
+.caption a {
+	text-align: center;
+	padding: 10px 0;
+	display: block;
+}
+
+.icon-button {
+	text-align: center;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-size: .9em;
+	margin: 10px 0;
+}
+
+.glyphicon-heart, .glyphicon-trash {
+	color: $icon-color;
+}
+
+/*---- FOOTER ---- */
+
+.clearfloat {
+	clear: both;
+}
+
+footer {
+	height: 100px;
+	margin-top: 50px;
+	text-align: center;
+	font-size: .7em;
+}
+
+footer img{
+	height: 50px;
+}
+
+/* ----- RETINA GOODNESS ----- */
+
+@media 
+(-webkit-min-device-pixel-ratio: 2), 
+(min-resolution: 192dpi) { 
+    /* Retina-specific stuff here */
+}

@@ -12,21 +12,5 @@ app.controller('NavCtrl', function($scope){
          url: '/logout'
       }]; 
 
-
-   $scope.menu = [
-      {
-      	name: "Select",
-      	url: '#'
-      },
-      {
-         name: "Create",
-         url: '#'
-      },
-      {
-         name: "View",
-         url: '#'
-      }]; 
-
-
 });
 
