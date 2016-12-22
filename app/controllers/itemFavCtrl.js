@@ -2,6 +2,7 @@
 
 app.controller('ItemFavCtrl', function($scope, ItemFactory){
 
+	$scope.button = "Delete";
 
 /**
   * getFavorite returns the data from the ItemFactory

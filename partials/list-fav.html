@@ -1,17 +1,23 @@
 <h1> Favorites! </h1>
 
+<!--repeat all items -->
 <div ng-repeat="item in items">
-
-<!-- <div class="row"> -->
-    <div class="col-sm-6 col-md-4">
-    <div class="thumbnail">
-     <img ng-src="{{item.image}}">
-      <div class="caption">
-        <h3>{{item.title}}</h3>
-        <p>{{item.description}}</p>
-          <a href="" role="button" ng-click="deleteFavorite(item.cardid)">Delete Favorite</a>
-      </div>
-    </div>
+   <div class="col-sm-6 col-md-4">
+     
+      <div class="thumbnail">
+        <img ng-src="{{item.image}}">
+         <div class="caption">
+            <h3>{{item.title}}</h3>
+            <p>{{item.description}}</p>        
+         </div>
+       
+         <div class="icon-button">
+            <a role="button" ng-click="deleteFavorite(item.cardid)">
+            <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+           {{button}}
+           </a>
+         </div>
+       </div>
+  
   </div>
-
-  </div>
+</div><!--end repeat -->
