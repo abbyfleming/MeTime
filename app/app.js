@@ -35,12 +35,14 @@ app.config(function($routeProvider, $locationProvider){
 
 		.when('/favorite', {
 			templateUrl: 'partials/list-fav.html',
-			controller: 'ItemFavCtrl'
+			controller: 'ItemFavCtrl',
+			resolve: {isAuth}
 		})
 
 		.when('/create', {
 			templateUrl: 'partials/create.html',
-			controller: 'itemCreateCtrl'
+			controller: 'itemCreateCtrl',
+			resolve: {isAuth}
 		})
 
 		.otherwise('/login'); 

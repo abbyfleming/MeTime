@@ -17,6 +17,11 @@ app.controller('NavCtrl', function($scope){
 		{
 			name: "Create",
 			url: '/create'
+		},
+
+		{
+			name: "Favorite",
+			url: '/favorite'
 		}
 	];
 

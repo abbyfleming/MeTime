@@ -74,7 +74,7 @@ app.factory("ItemFactory", ($http, $window, FBCreds, AuthFactory) => {
 	};
 
 
-
+	//gets a single favorite item based on the id
 	let singleFavorite = (itemId) => {
 
 		return new Promise((resolve, reject) => {
@@ -110,9 +110,24 @@ app.factory("ItemFactory", ($http, $window, FBCreds, AuthFactory) => {
 	};
 
 
-	
 
+	let postCreated = (createdNote) => {
+		console.log("postCreated in Factory");
 
-	return {getItemList, postFavorite, getFavorite, singleFavorite, deleteFavorite};
+		return new Promise((resolve, reject) => {
+			console.log(createdNote);
+			$http.post(`${FBCreds.URL}/created.json`, angular.toJson(createdNote))
+			.then((createdNote) => {
+				resolve(createdNote);
+				$window.alert("You created an item!");
+				console.log("posted new item", createdNote);
+			})
+			.catch((error) => {
+				reject(error);
+			});
+		});
+	};
+
+	return {getItemList, postFavorite, getFavorite, singleFavorite, deleteFavorite, postCreated};
 
 }); 

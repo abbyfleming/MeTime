@@ -1,7 +1,7 @@
 "use strict";
 console.log("itemCreateCtrl connected");
 
-app.controller('itemCreateCtrl', function($scope, AuthFactory, ItemFactory){
+app.controller('itemCreateCtrl', function($scope, $window, AuthFactory, ItemFactory){
 
 	let currentUser = AuthFactory.getUser();
 	$scope.btnText = "Create";
@@ -17,13 +17,12 @@ app.controller('itemCreateCtrl', function($scope, AuthFactory, ItemFactory){
 	$scope.addNewCard = function(){
 		console.log("add a new card", $scope.newCard);
 
-		// //In the factory, run the function postNewItem with the content from user input
-		// ItemStorage.postNewItem($scope.newCard)
-		// 	.then((response) => {
-								
-		// 		//after a new card is added, change the url location
-		// 		$window.location.href = "/";
-		// 	});
+		//In the factory, run the function postNewItem with the content from user input
+		ItemFactory.postCreated($scope.newCard)
+			.then((response) => {
+				//after a new card is added, change the url location
+				$window.location.href = "/";
+			});
 	};
 
 

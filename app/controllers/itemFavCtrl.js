@@ -55,6 +55,8 @@ app.controller('ItemFavCtrl', function($scope, ItemFactory){
 			ItemFactory.singleFavorite(id)
 			.then((favoriteData) => {
 
+				console.log(favoriteData);
+
 				let data = favoriteData;
 				data.cardid = fbId;
 
