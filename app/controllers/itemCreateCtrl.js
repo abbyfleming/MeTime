@@ -16,12 +16,10 @@ app.controller('itemCreateCtrl', function($scope, $window, AuthFactory, ItemFact
 
 	$scope.addNewCard = function(){
 		console.log("add a new card", $scope.newCard);
-
-		//In the factory, run the function postNewItem with the content from user input
 		ItemFactory.postCreated($scope.newCard)
 			.then((response) => {
 				//after a new card is added, change the url location
-				$window.location.href = "/";
+				$window.location.href = "/favorite";
 			});
 	};
 

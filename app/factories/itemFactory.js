@@ -110,24 +110,6 @@ app.factory("ItemFactory", ($http, $window, FBCreds, AuthFactory) => {
 	};
 
 
-
-	let postCreated = (createdNote) => {
-		console.log("postCreated in Factory");
-
-		return new Promise((resolve, reject) => {
-			console.log(createdNote);
-			$http.post(`${FBCreds.URL}/created.json`, angular.toJson(createdNote))
-			.then((createdNote) => {
-				resolve(createdNote);
-				$window.alert("You created an item!");
-				console.log("posted new item", createdNote);
-			})
-			.catch((error) => {
-				reject(error);
-			});
-		});
-	};
-
-	return {getItemList, postFavorite, getFavorite, singleFavorite, deleteFavorite, postCreated};
+	return {getItemList, postFavorite, getFavorite, singleFavorite, deleteFavorite};
 
 }); 
