@@ -7,9 +7,13 @@ app.controller('ItemUpdateCtrl', function($scope, $routeParams, ItemCreatedFacto
 	ItemCreatedFactory.singleCreatedFavorite($routeParams.itemId)
 		.then((singleCard) => {
 			console.log(singleCard);
+			
 			$scope.selectedItem = singleCard;
 
 			console.log($scope.selectedItem.title);
+
+			$scope.title = $scope.selectedItem.title;
+			$scope.description = $scope.selectedItem.description;
 
 			$scope.$apply();
 
