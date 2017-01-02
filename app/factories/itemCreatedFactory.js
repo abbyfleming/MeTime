@@ -4,9 +4,6 @@
 
 app.factory("ItemCreatedFactory", ($http, $window, FBCreds, AuthFactory) => {
 
-
-
-
 	let postCreated = (createdNote) => {
 		console.log("postCreated in Factory");
 
@@ -73,6 +70,25 @@ app.factory("ItemCreatedFactory", ($http, $window, FBCreds, AuthFactory) => {
 	};
 
 
-	return {postCreated, getCreated, singleCreatedFavorite};
+	let postUpdated = (itemId, updatedCardObject) => {
+
+		console.log(itemId, updatedCardObject);
+
+		return new Promise((resolve, reject) => {
+			$http.patch(`${FBCreds.URL}/created/${itemId}.json`, angular.toJson(updatedCardObject))
+
+			.then((updatedObject) => {
+				resolve(updatedObject);
+				console.log("you updated the object");
+			})
+
+			.catch((error) => {
+				reject(error);
+			});
+		});
+	};
+
+
+	return {postCreated, getCreated, singleCreatedFavorite, postUpdated};
 
 }); 
