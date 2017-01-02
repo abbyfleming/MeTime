@@ -1,8 +1,20 @@
 "use strict";
 
-app.controller('ItemFavCtrl', function($scope, ItemFactory){
+app.controller('ItemFavCtrl', function($scope, ItemFactory, ItemCreatedFactory){
 
 	$scope.button = "Delete";
+
+/**
+ * getCreated returns the data from the 
+ * ItemCreatedFactory (user created)
+ */
+
+	ItemCreatedFactory.getCreated()
+		.then((createdArray) => {
+			console.log(createdArray);
+			$scope.createdItem = createdArray;
+	});
+
 
 /**
   * getFavorite returns the data from the ItemFactory
@@ -15,7 +27,6 @@ app.controller('ItemFavCtrl', function($scope, ItemFactory){
 		.then( (favoriteArray) => {
 			$scope.buildFavorite(favoriteArray);
 	}); 
-
 
 
 	$scope.buildFavorite = (favoriteArray) => {
@@ -54,6 +65,8 @@ app.controller('ItemFavCtrl', function($scope, ItemFactory){
 			
 			ItemFactory.singleFavorite(id)
 			.then((favoriteData) => {
+
+				console.log(favoriteData);
 
 				let data = favoriteData;
 				data.cardid = fbId;

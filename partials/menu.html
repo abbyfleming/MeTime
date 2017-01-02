@@ -1,6 +1,5 @@
-
-<div ng-controller="NavCtrl">
-	<ul ng-repeat="nav in menu">
-		<li><a href="{{nav.url}}">{{nav.name}}</a></li>
+<nav ng-controller="NavCtrl">
+	<ul ng-repeat="item in menuItems">
+		<li><a href="{{item.url}}">{{item.name}}</a></li>
 	</ul>
-</div>
+</nav>

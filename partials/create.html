@@ -1,0 +1,19 @@
+<div ng-include="'partials/menu.html'"></div>
+
+<h1>Create!</h1>
+
+<div class="form-group">
+<label>
+	Title: <input type="text" ng-model="newCard.title" />
+</label>
+</div>
+
+<div class="form-group">
+<label>
+	Description: <input type="text" ng-model="newCard.description" />	
+</label>
+</div>
+
+<button ng-click="addNewCard()">{{btnText}}</button>
+
+<!-- <button ng-click="addNewNote()">{{btnText}}</button> -->

@@ -74,7 +74,7 @@ app.factory("ItemFactory", ($http, $window, FBCreds, AuthFactory) => {
 	};
 
 
-
+	//gets a single favorite item based on the id
 	let singleFavorite = (itemId) => {
 
 		return new Promise((resolve, reject) => {
@@ -108,9 +108,6 @@ app.factory("ItemFactory", ($http, $window, FBCreds, AuthFactory) => {
 			});
 		});
 	};
-
-
-	
 
 
 	return {getItemList, postFavorite, getFavorite, singleFavorite, deleteFavorite};

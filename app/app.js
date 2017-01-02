@@ -23,9 +23,8 @@ app.config(function($routeProvider, $locationProvider){
 	$routeProvider
 
 		.when('/login', {
-		templateUrl: 'partials/login.html',
-		controller: "LoginCtrl"
-
+			templateUrl: 'partials/login.html',
+			controller: "LoginCtrl"
 		})
 
 		.when('/select', {
@@ -36,7 +35,20 @@ app.config(function($routeProvider, $locationProvider){
 
 		.when('/favorite', {
 			templateUrl: 'partials/list-fav.html',
-			controller: 'ItemFavCtrl'
+			controller: 'ItemFavCtrl',
+			resolve: {isAuth}
+		})
+
+		.when('/create', {
+			templateUrl: 'partials/create.html',
+			controller: 'itemCreateCtrl',
+			resolve: {isAuth}
+		})
+
+		.when('/edit/:itemId', {
+			templateUrl: 'partials/edit.html',
+			controller: 'ItemUpdateCtrl',
+			resolve: {isAuth}
 		})
 
 		.otherwise('/login'); 
