@@ -54,7 +54,25 @@ app.factory("ItemCreatedFactory", ($http, $window, FBCreds, AuthFactory) => {
 	};
 
 
+	let singleCreatedFavorite = (itemId) => {
 
-	return {postCreated, getCreated};
+		console.log("singleCreatedFavorite", itemId);
+
+		return new Promise((resolve, reject) => {
+			$http.get(`${FBCreds.URL}/created/${itemId}.json`)
+
+			.then((itemObject) => {
+				let itemCollection = itemObject.data;
+				console.log("single item from fb", itemCollection);
+				resolve(itemCollection);
+			})
+			.catch((error) => {
+				reject(error);
+			});
+		});
+	};
+
+
+	return {postCreated, getCreated, singleCreatedFavorite};
 
 }); 

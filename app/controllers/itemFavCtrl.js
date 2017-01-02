@@ -12,6 +12,7 @@ app.controller('ItemFavCtrl', function($scope, ItemFactory, ItemCreatedFactory){
 	ItemCreatedFactory.getCreated()
 		.then((createdArray) => {
 			console.log(createdArray);
+			$scope.createdItem = createdArray;
 	});
 
 

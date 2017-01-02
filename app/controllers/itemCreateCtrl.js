@@ -1,7 +1,7 @@
 "use strict";
 console.log("itemCreateCtrl connected");
 
-app.controller('itemCreateCtrl', function($scope, $window, AuthFactory, ItemFactory){
+app.controller('itemCreateCtrl', function($scope, $window, AuthFactory, ItemCreatedFactory){
 
 	let currentUser = AuthFactory.getUser();
 	$scope.btnText = "Create";
@@ -16,7 +16,7 @@ app.controller('itemCreateCtrl', function($scope, $window, AuthFactory, ItemFact
 
 	$scope.addNewCard = function(){
 		console.log("add a new card", $scope.newCard);
-		ItemFactory.postCreated($scope.newCard)
+		ItemCreatedFactory.postCreated($scope.newCard)
 			.then((response) => {
 				//after a new card is added, change the url location
 				$window.location.href = "/favorite";

@@ -45,6 +45,12 @@ app.config(function($routeProvider, $locationProvider){
 			resolve: {isAuth}
 		})
 
+		.when('/edit/:itemId', {
+			templateUrl: 'partials/edit.html',
+			controller: 'ItemUpdateCtrl',
+			resolve: {isAuth}
+		})
+
 		.otherwise('/login'); 
 
 	$locationProvider.html5Mode(true);
