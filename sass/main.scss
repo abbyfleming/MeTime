@@ -10,6 +10,10 @@ $nav-color: #ECE3DC;
 
 /* ----- HEADER & DEFAULTS----- */
 
+* {
+    box-sizing: border-box;
+}
+
 body {
   color: $text-color;
   background: $bg-color;
@@ -17,6 +21,7 @@ body {
 }
 
 a, a:hover {
+	color: $text-color;
 	text-decoration: none;
 }
 
@@ -65,6 +70,13 @@ h3 {
 .navbar-fixed-left .navbar-nav > li {
   float: none;  /* Cancel default li float: left */
   width: 139px;
+}
+
+#logout {
+	width: 139px;
+	margin: 15px;
+	color: $link-color;
+
 }
 
 .navbar-fixed-left + .container {

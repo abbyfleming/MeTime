@@ -4,6 +4,12 @@
   <ul ng-repeat="item in menuItems" class="nav navbar-nav">
 		<li><a href="/#!{{item.url}}">{{item.name}}</a></li>
   </ul>
+	  <a href="" ng-click="logout()" class="nav navbar-nav" id="logout">Logout</a>
 </div>
  
-
+<!-- 
+ <div ng-controller="LoginCtrl">
+  <ul>
+  	<li><a href="" ng-click="logout()">Logout</a></li>
+  </ul>
+</div> -->
