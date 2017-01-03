@@ -11,7 +11,6 @@ app.controller('ItemFavCtrl', function($scope, ItemFactory, ItemCreatedFactory){
 
 	ItemCreatedFactory.getCreated()
 		.then((createdArray) => {
-			console.log(createdArray);
 			$scope.createdItem = createdArray;
 	});
 
@@ -25,7 +24,7 @@ app.controller('ItemFavCtrl', function($scope, ItemFactory, ItemCreatedFactory){
 
 	ItemFactory.getFavorite()
 		.then( (favoriteArray) => {
-			$scope.buildFavorite(favoriteArray);
+		$scope.buildFavorite(favoriteArray);
 	}); 
 
 
@@ -55,7 +54,6 @@ app.controller('ItemFavCtrl', function($scope, ItemFactory, ItemCreatedFactory){
 */
 
 	$scope.sortFavorite = (uniqueCard) => {
-		console.log("is sort fav running too?");
 		let favoriteArray = [];
 
 		for (var i = 0; i < uniqueCard.length; i++){
@@ -66,7 +64,7 @@ app.controller('ItemFavCtrl', function($scope, ItemFactory, ItemCreatedFactory){
 			ItemFactory.singleFavorite(id)
 			.then((favoriteData) => {
 
-				console.log(favoriteData);
+				//console.log(favoriteData);
 
 				let data = favoriteData;
 				data.cardid = fbId;
@@ -92,7 +90,7 @@ app.controller('ItemFavCtrl', function($scope, ItemFactory, ItemCreatedFactory){
 	$scope.deleteFavorite = (cardid) => {
 		ItemFactory.deleteFavorite(cardid)
 			
-			.then ((cardid) => {	
+			.then ((response) => {	
 				ItemFactory.getFavorite()
 					
 			.then((favoriteArray) => {	
@@ -101,5 +99,20 @@ app.controller('ItemFavCtrl', function($scope, ItemFactory, ItemCreatedFactory){
 			
 			});
 	};
+
+
+	$scope.deleteCreated = (cardid) => {
+		ItemCreatedFactory.deleteCreated(cardid)
+			
+			.then ((response) => {	
+				ItemCreatedFactory.getCreated()
+			
+			.then ((createdArray) => {
+				$scope.createdItem = createdArray;
+				$scope.$apply();
+				});
+			});
+	};
+
 
 });

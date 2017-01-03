@@ -1,8 +1,9 @@
+
 <div ng-include="'partials/menu.html'"></div>
 
-<h1>{{title}}</h1>
+<div class="container">
 
-<a href="/favorite" class="btn btn-info" role="button" ng-click="getFavorite()">View Favorites</a>
+<h1>{{title}}</h1>
 
 <!--repeat all items -->
 <div ng-repeat="item in items">
@@ -25,3 +26,5 @@
   
   </div>
 </div><!--end repeat -->
+
+</div>

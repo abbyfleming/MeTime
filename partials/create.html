@@ -1,5 +1,30 @@
 <div ng-include="'partials/menu.html'"></div>
 
+<div class="container">
+
+<h1>Create</h1>
+
+   <div class="col-sm-6 col-md-4">
+      <div class="thumbnail">
+        <img ng-src="{{newCard.image}}">
+         <div class="caption">
+            <h3>{{newCard.title}}</h3>
+            <p>{{newCard.description}}</p>        
+         </div>
+       </div>
+  </div>
+
+ <h3>Title</h3>
+ <input ng-model="newCard.title">
+
+ <h3>Description</h3>
+ <input ng-model="newCard.description">
+
+ <button ng-click="addNewCard()">{{btnText}}</button>
+
+</div>
+
+<!-- 
 <h1>Create!</h1>
 
 <div class="form-group">
@@ -16,4 +41,5 @@
 
 <button ng-click="addNewCard()">{{btnText}}</button>
 
-<!-- <button ng-click="addNewNote()">{{btnText}}</button> -->
+</div>
+ -->

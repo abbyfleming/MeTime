@@ -1,5 +1,7 @@
 <div ng-include="'partials/menu.html'"></div>
 
+<div class="container">
+
 <h1>Edit Your Item</h1>
 
    <div class="col-sm-6 col-md-4">
@@ -12,8 +14,12 @@
        </div>
   </div>
 
-
+ <h3>Title</h3>
  <input ng-model="updateCard.title">
+
+ <h3>Description</h3>
  <input ng-model="updateCard.description">
 
-<button ng-click="updateCardtoFB()">{{button}}</button>
+ <button ng-click="updateCardtoFB()" class="btn-spacing">{{button}}</button>
+
+</div>

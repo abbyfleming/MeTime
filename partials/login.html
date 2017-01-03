@@ -1,18 +1,26 @@
-<section>
 
-	<h2>Login or Register</h2>
+<div id="login-container">
 
-	<div>
-		Email: <input type="text" autofocus="true" ng-model="account.email">
+	<h2>Welcome!</h2>
+
+	<hr>
+	<div class="input-group">
+			<span class="input-group-addon" id="sizing-addon1">
+					<span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+			</span>
+		 <input ng-model="account.email" type="text" class="form-control" placeholder="Email"/>
 	</div>
 
-	<div>
-		Password: <input type="password" ng-model="account.password">
+	<div class="input-group">
+			<span class="input-group-addon" id="sizing-addon1">
+					<span class="glyphicon glyphicon-lock" aria-hidden="true"></span>
+			</span>
+			<input ng-model="account.password" type="password" class="form-control" placeholder="Password"/>
 	</div>
 
-	<div>
-		<button ng-click="login()">Login</button>
-		<button ng-click="register()">Register</button>
+	<div id="login-btn-group">
+		<button ng-click="login()" class="btn btn-md" name="Login">Login</button>
+		<button ng-click="register()" class="btn btn-md" name="Register">Register</button>
 	</div>
 
-</section>
+</div>
