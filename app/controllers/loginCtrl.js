@@ -1,8 +1,13 @@
 "use strict";
 
-//cannot use fat arrows on constructors
+/**
+  * loginCtrl.js is responsible for allowing the
+  * user to login or register.
+*/
 
-app.controller("LoginCtrl", function($scope, AuthFactory, $location) {
+app.controller("LoginCtrl", function($scope, AuthFactory, $location, $timeout) {
+
+	let currentUser = AuthFactory.getUser();
 
 	$scope.account = {
 		email: "",
@@ -20,8 +25,19 @@ app.controller("LoginCtrl", function($scope, AuthFactory, $location) {
 		AuthFactory.loginUser($scope.account)
 			.then((user) => {
 				$location.path("/select");
+				$timeout();
 			});
 
+	};
+
+	$scope.logout = () => {
+		console.log("clicked logout");
+		AuthFactory.logoutUser()
+			.then((response) => {
+				currentUser = null;
+				$location.path("/login");
+				$timeout();
+			});
 	};
 
 });
