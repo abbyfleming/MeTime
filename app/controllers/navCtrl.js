@@ -4,10 +4,6 @@ app.controller('NavCtrl', function($scope){
 
 	 $scope.navItems = [
 			{
-				 name: "Login/Register",
-				 url: '/login'
-			},
-			{
 				 name: "Logout",
 				 url: '/logout'
 			}]; 
@@ -15,13 +11,21 @@ app.controller('NavCtrl', function($scope){
 
 	$scope.menuItems = [
 		{
+			name: "Select",
+			url: '/select'
+		},
+		{
 			name: "Create",
 			url: '/create'
 		},
 
 		{
-			name: "Favorite",
+			name: "View",
 			url: '/favorite'
+		},
+		{
+			name: "Logout",
+			url: '/login'
 		}
 	];
 

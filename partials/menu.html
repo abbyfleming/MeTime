@@ -1,5 +1,15 @@
-<nav ng-controller="NavCtrl">
-	<ul ng-repeat="item in menuItems">
+
+
+<div  ng-controller="NavCtrl" class="navbar navbar-inverse navbar-fixed-left">
+  <a class="navbar-brand" href="#">Brand</a>
+  <ul ng-repeat="item in menuItems" class="nav navbar-nav">
 		<li><a href="{{item.url}}">{{item.name}}</a></li>
+  </ul>
+</div>
+
+<!-- 
+<div ng-controller="NavCtrl">
+	<ul ng-repeat="item in menuItems">
+	    <li><a href="{{item.url}}">{{item.name}}</a></li>
 	</ul>
-</nav>
+</div> -->
