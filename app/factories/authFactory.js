@@ -24,7 +24,6 @@ app.factory("AuthFactory", function(){
 			firebase.auth().onAuthStateChanged((user) => {
 				if (user) {
 					currentUser = user.uid;
-					console.log("currentUser", currentUser);
 					resolve(true);
 				} else {
 					resolve(false);
