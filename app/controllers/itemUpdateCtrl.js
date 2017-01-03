@@ -28,6 +28,7 @@ app.controller('ItemUpdateCtrl', function($scope, $location, $routeParams, AuthF
 			.then((response) => {
 				//after a new card is added, change the url location
 				$location.path("/favorite");
+				$scope.$apply();
 			});
 	};
 

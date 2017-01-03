@@ -21,7 +21,8 @@ app.controller('itemCreateCtrl', function($scope, $location, $window, AuthFactor
 				//after a new card is added, change the url location
 				//$window.location.href = "/favorite";
 				// $location.url("/items/list");
-				// $location.path("/favorite");
+				$location.path("/favorite");
+				$scope.$apply();
 			});
 	};
 
