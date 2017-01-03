@@ -1,11 +1,15 @@
 /* ----- SASS ----- */
 /* ----- HEADER & DEFAULTS----- */
+* {
+  box-sizing: border-box; }
+
 body {
   color: #5F5F5F;
   background: #FAFAFA;
   font-family: "Muli", verdana, sans-serif; }
 
 a, a:hover {
+  color: #5F5F5F;
   text-decoration: none; }
 
 #logo {
@@ -46,6 +50,11 @@ h3 {
   float: none;
   /* Cancel default li float: left */
   width: 139px; }
+
+#logout {
+  width: 139px;
+  margin: 15px;
+  color: #9EA6B3; }
 
 .navbar-fixed-left + .container {
   padding-left: 300px; }
