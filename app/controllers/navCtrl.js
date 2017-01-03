@@ -1,13 +1,11 @@
 "use strict";
 
+/**
+  * navCtrl.js is responsible for the 
+  * navigation (menu options) of the website.
+*/
+
 app.controller('NavCtrl', function($scope){
-
-	 $scope.navItems = [
-			{
-				 name: "Logout",
-				 url: '/logout'
-			}]; 
-
 
 	$scope.menuItems = [
 		{
@@ -22,10 +20,6 @@ app.controller('NavCtrl', function($scope){
 		{
 			name: "View",
 			url: '/favorite'
-		},
-		{
-			name: "Logout",
-			url: '/login'
 		}
 	];
 

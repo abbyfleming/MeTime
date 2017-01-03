@@ -1,5 +1,11 @@
 "use strict";
 
+/**
+  * itemFavCtrl.js is responsible for showing 
+  * the user's favorited cards along with any
+  * created cards
+*/
+
 app.controller('ItemFavCtrl', function($scope, ItemFactory, ItemCreatedFactory){
 
 	$scope.button = "Delete";
@@ -64,8 +70,6 @@ app.controller('ItemFavCtrl', function($scope, ItemFactory, ItemCreatedFactory){
 			ItemFactory.singleFavorite(id)
 			.then((favoriteData) => {
 
-				//console.log(favoriteData);
-
 				let data = favoriteData;
 				data.cardid = fbId;
 
@@ -94,6 +98,8 @@ app.controller('ItemFavCtrl', function($scope, ItemFactory, ItemCreatedFactory){
 				ItemFactory.getFavorite()
 					
 			.then((favoriteArray) => {	
+
+				//update the dom
 				$scope.buildFavorite(favoriteArray);
 				});
 			
@@ -108,6 +114,8 @@ app.controller('ItemFavCtrl', function($scope, ItemFactory, ItemCreatedFactory){
 				ItemCreatedFactory.getCreated()
 			
 			.then ((createdArray) => {
+
+				//update the dom
 				$scope.createdItem = createdArray;
 				$scope.$apply();
 				});

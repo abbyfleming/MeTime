@@ -1,6 +1,15 @@
 "use strict";
 
+/**
+  * itemCreatedFactory.js is responsible for
+  * the items & user's favorited items. This 
+  * factory DOES NOT interact with created,
+  * but only items.json & favorite.json in 
+  * Firebase.
+*/
+
 app.factory("ItemFactory", ($http, $window, FBCreds, AuthFactory) => {
+
 
 
 	let getItemList = () => {

@@ -1,26 +1,37 @@
 "use strict";
-console.log("app.js");
 
-// Resolve: safety feature so people can't just go to the URL. 
-//resolve: {isAuth}
+/**
+  * app.js is the heart of the app. This provides
+  * the routes for the application as well as running
+  * the app.
+*/
 
-
-/* Define the app */
 var app = angular.module("MeTimeApp", ["ngRoute"]);
 
 let isAuth = (AuthFactory) => new Promise((resolve, reject) => {
+	console.log('isAuth');
 	AuthFactory.isAuthenticated()
 		.then((userExists) => {
-			if(userExists){
+			if (userExists){
+				console.log('resolving');
 				resolve();
 			} else {
+				console.log('rejectng');
 				reject();
 			}
 		});
 });
 
+
 app.config(function($routeProvider, $locationProvider){
+
 	$routeProvider
+
+		.when('/', {
+			templateUrl: 'partials/list-items.html',
+			controller: 'ItemListCtrl',
+			resolve: { isAuth }
+		})
 
 		.when('/login', {
 			templateUrl: 'partials/login.html',
@@ -30,36 +41,42 @@ app.config(function($routeProvider, $locationProvider){
 		.when('/select', {
 			templateUrl: 'partials/list-items.html',
 			controller: 'ItemListCtrl',
-			resolve: {isAuth}
+			resolve: { isAuth }
 		})
 
 		.when('/favorite', {
 			templateUrl: 'partials/list-fav.html',
 			controller: 'ItemFavCtrl',
-			resolve: {isAuth}
+			resolve: { isAuth }
 		})
 
 		.when('/create', {
 			templateUrl: 'partials/create.html',
 			controller: 'itemCreateCtrl',
-			resolve: {isAuth}
+			resolve: { isAuth }
 		})
 
 		.when('/edit/:itemId', {
 			templateUrl: 'partials/edit.html',
 			controller: 'ItemUpdateCtrl',
-			resolve: {isAuth}
+			resolve: { isAuth }
 		})
 
-		.otherwise('/login'); 
+		.otherwise({
+			redirectTo: "/"
+		}); 
 
-	$locationProvider.html5Mode(true);
-	
+	// $locationProvider.html5Mode(true);
+	// Resolve: safety feature so people can't just go to the URL. 	
 });
 
 
-app.run( ($location, FBCreds) => {
+app.run( ($location, FBCreds, $rootScope) => {
 	let creds = FBCreds;
+
+	$rootScope.$on("$routeChangeError", function () {
+		$location.path("/login");
+	});
 
 	let authConfig = {
 		apiKey: creds.key,

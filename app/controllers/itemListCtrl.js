@@ -1,5 +1,10 @@
 "use strict";
 
+/**
+  * itemListCtrl.js is responsible for displaying
+  * the predefined cards
+*/
+
 app.controller('ItemListCtrl', function($scope, AuthFactory, ItemFactory){
 
 	$scope.title = "Select Your Favorites";
@@ -14,11 +19,14 @@ app.controller('ItemListCtrl', function($scope, AuthFactory, ItemFactory){
 	}); 
 
 
-	//setting default values for scope is not needed since there is not two way binding. you're pulling in values already created. woo. (see below)
+	/**
+	  * NOTE: setting default values for scope is not needed since 
+	  * there is not two way binding. you're pulling in values 
+	  * already created. woo. (see below). Create an object
+	  * with the cardid and userid to pass to the ItemFactory
+	*/
 	
 	$scope.addFavorite = function(itemID){
-		//create object with two properties 1) cardId & 2) userId
-		//cardID + current user gets passed into the itemFactory to post
 
 		let currentUser = AuthFactory.getUser();
 		

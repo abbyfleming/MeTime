@@ -1,11 +1,16 @@
 "use strict";
-console.log("itemCreateCtrl connected");
 
-app.controller('itemCreateCtrl', function($scope, $location, $window, AuthFactory, ItemCreatedFactory){
+/**
+  * itemCreateCtrl.js is responsible for the creation
+  * of new cards. 
+*/
+
+app.controller('itemCreateCtrl', function($scope, $location, AuthFactory, ItemCreatedFactory){
 
 	let currentUser = AuthFactory.getUser();
 	$scope.btnText = "Create";
 
+	//default values for the new card
 	$scope.newCard = {
 		image: "images/create-001.jpg",
 		title: "",
@@ -19,8 +24,6 @@ app.controller('itemCreateCtrl', function($scope, $location, $window, AuthFactor
 		ItemCreatedFactory.postCreated($scope.newCard)
 			.then((response) => {
 				//after a new card is added, change the url location
-				//$window.location.href = "/favorite";
-				// $location.url("/items/list");
 				$location.path("/favorite");
 				$scope.$apply();
 			});

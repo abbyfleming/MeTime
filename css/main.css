@@ -1,8 +1,9 @@
+/* ----- SASS ----- */
 /* ----- HEADER & DEFAULTS----- */
 body {
   color: #5F5F5F;
   background: #FAFAFA;
-  font-family: "Muli", sans-serif; }
+  font-family: "Muli", verdana, sans-serif; }
 
 a, a:hover {
   text-decoration: none; }

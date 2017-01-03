@@ -1,6 +1,10 @@
 "use strict";
 
-/* This factory only deals with user created cards */
+/**
+  * itemCreatedFactory.js is responsible for
+  * the user's created items ONLY and only makes
+  * calls to firebase/created.json
+*/
 
 app.factory("ItemCreatedFactory", ($http, $window, FBCreds, AuthFactory) => {
 
